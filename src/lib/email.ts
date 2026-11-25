@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { COMPANY_CONFIG } from "@/config/company";
 
 interface SubmissionEmailParams {
   fullName: string;
@@ -62,6 +63,9 @@ export async function sendSubmissionEmails(
   const safeCollege = escapeHtml(params.collegeName);
   const safeEmail = escapeHtml(params.email);
   const safeDomain = escapeHtml(params.domain);
+  const safeAddress = escapeHtml(COMPANY_CONFIG.BENGALURU_ADDRESS);
+  const safeContactEmail = escapeHtml(COMPANY_CONFIG.CONTACT_EMAIL);
+  const safeContactPhone = escapeHtml(COMPANY_CONFIG.CONTACT_PHONE);
   const isAuto = params.status === "AUTO_SUBMITTED";
   const statusLabel = isAuto ? "Auto-Submitted" : "Submitted Successfully";
 
@@ -117,7 +121,11 @@ export async function sendSubmissionEmails(
                   <div style="border-top:1px solid rgba(196,181,253,0.15);padding-top:18px;margin-top:18px;font-size:13px;color:#C4B5FD;">
                     Warm regards,<br />
                     <strong style="color:#FFFFFF;">Hari Kumar</strong> &mdash; CEO, Korlance<br />
-                    <span style="color:#94A3B8;">Hyderabad &amp; Bengaluru, India</span>
+                    <span style="color:#94A3B8;">${safeAddress}</span><br />
+                    <span style="color:#94A3B8;">
+                      Phone: <a href="tel:${safeContactPhone}" style="color:#C4B5FD;text-decoration:none;">${safeContactPhone}</a> &bull;
+                      Email: <a href="mailto:${safeContactEmail}" style="color:#C4B5FD;text-decoration:none;">${safeContactEmail}</a>
+                    </span>
                   </div>
                 </td>
               </tr>
@@ -163,6 +171,11 @@ export async function sendSubmissionEmails(
                 <tr><td style="color:#94A3B8;">Score:</td><td style="color:#FFFFFF;font-weight:700;">${params.score} / ${params.totalQuestions}</td></tr>
                 <tr><td style="color:#94A3B8;">Violations:</td><td style="color:#FFFFFF;">${params.violationCount}</td></tr>
               </table>
+              <div style="border-top:1px solid rgba(196,181,253,0.15);padding-top:14px;margin-top:16px;font-size:12px;color:#94A3B8;">
+                ${safeAddress}<br />
+                Phone: <a href="tel:${safeContactPhone}" style="color:#C4B5FD;text-decoration:none;">${safeContactPhone}</a> &bull;
+                Email: <a href="mailto:${safeContactEmail}" style="color:#C4B5FD;text-decoration:none;">${safeContactEmail}</a>
+              </div>
             </td>
           </tr>
         </table>

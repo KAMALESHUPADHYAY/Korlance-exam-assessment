@@ -65,14 +65,20 @@ export function Footer({ showLeadershipCard = false }: FooterProps) {
               <MapPin className="h-3.5 w-3.5 shrink-0 text-purple-400" />
               <span>{COMPANY_CONFIG.BENGALURU_ADDRESS}</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <a
+              href={`mailto:${COMPANY_CONFIG.CONTACT_EMAIL}`}
+              className="flex items-center gap-1.5 transition hover:text-white"
+            >
               <Mail className="h-3.5 w-3.5 shrink-0 text-purple-400" />
               <span>{COMPANY_CONFIG.CONTACT_EMAIL}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
+            </a>
+            <a
+              href={`tel:${COMPANY_CONFIG.CONTACT_PHONE}`}
+              className="flex items-center gap-1.5 transition hover:text-white"
+            >
               <Phone className="h-3.5 w-3.5 shrink-0 text-purple-400" />
               <span>{COMPANY_CONFIG.CONTACT_PHONE}</span>
-            </div>
+            </a>
           </div>
         </div>
 
