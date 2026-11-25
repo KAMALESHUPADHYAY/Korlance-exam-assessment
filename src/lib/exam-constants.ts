@@ -1,0 +1,42 @@
+export const DOMAIN_CARDS = [
+  {
+    name: "Data Science",
+    count: 6,
+    gradient: "from-violet-600/30 via-purple-600/20 to-fuchsia-600/20",
+    border: "border-purple-400/30",
+    badge: "bg-purple-500/20 text-purple-200",
+    topics: "Statistics, Pandas, Scaling, Hypothesis Testing, EDA",
+  },
+  {
+    name: "Web Development",
+    count: 6,
+    gradient: "from-blue-600/30 via-indigo-600/20 to-cyan-600/20",
+    border: "border-blue-400/30",
+    badge: "bg-blue-500/20 text-blue-200",
+    topics: "Next.js, React, REST APIs, Security, CSS Grid, CORS",
+  },
+  {
+    name: "AI / ML",
+    count: 6,
+    gradient: "from-fuchsia-600/30 via-pink-600/20 to-rose-600/20",
+    border: "border-pink-400/30",
+    badge: "bg-pink-500/20 text-pink-200",
+    topics: "Metrics, Regularization, Transformers, Ensembles, CV",
+  },
+  {
+    name: "Python & Programming",
+    count: 6,
+    gradient: "from-emerald-600/30 via-teal-600/20 to-cyan-600/20",
+    border: "border-emerald-400/30",
+    badge: "bg-emerald-500/20 text-emerald-200",
+    topics: "Core Python, Complexity, Generators, Data Structures, Memoization",
+  },
+  {
+    name: "Databases & Tech",
+    count: 6,
+    gradient: "from-amber-600/30 via-orange-600/20 to-yellow-600/20",
+    border: "border-amber-400/30",
+    badge: "bg-amber-500/20 text-amber-200",
+    topics: "SQL Joins, Indexing, ACID Transactions, Git & Docker",
+  },
+];
